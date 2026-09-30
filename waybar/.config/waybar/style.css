@@ -1,0 +1,41 @@
+@define-color background #2d243d;
+@define-color module-background #33205e;
+@define-color foreground #8d5ce8;
+@define-color border #854efc;
+*{
+font-family: "DepartureMono nerd Font";
+font-size: 15px;
+}
+window#waybar{
+	background-color:@background;
+	color:@foreground;
+}
+#clock,
+#battery,
+#cpu,
+#memory,
+#tray,
+#window{
+	background-color:@module-background;
+	padding:4px 8px;
+	border:1px solid @border;
+	margin: 6px 3px;
+	border-radius: 6px;
+}
+#workspaces{
+	border: 1px solid @border;
+	border-radius: 6px;
+	margin: 4px 3px;
+	padding: 0 4px;
+}
+#workspaces button{
+	color:@foreground;
+	border:none;
+	border-radius:4px;
+	padding:0 6px;
+	margin:2px;
+}
+#workspaces button.active{
+color:@foreground;
+background-color: @module-background;
+}
