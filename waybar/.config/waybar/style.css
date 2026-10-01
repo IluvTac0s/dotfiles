@@ -1,41 +1,84 @@
-@define-color background #2d243d;
+@define-color background #211b2d;
 @define-color module-background #33205e;
-@define-color foreground #8d5ce8;
+@define-color foreground #e6defa;
+@define-color muted #a99abb;
+@define-color accent #a875ff;
 @define-color border #854efc;
-*{
-font-family: "DepartureMono nerd Font";
-font-size: 15px;
+* {
+    font-family: "DepartureMono Nerd Font";
+    font-size: 15px;
+    min-height: 0;
 }
-window#waybar{
-	background-color:@background;
-	color:@foreground;
+
+window#waybar {
+    background: @background;
+    color: @foreground;
 }
+
 #clock,
 #battery,
 #cpu,
 #memory,
 #tray,
-#window{
-	background-color:@module-background;
-	padding:4px 8px;
-	border:1px solid @border;
-	margin: 6px 3px;
-	border-radius: 6px;
+#window {
+    background: @module-background;
+    color: @foreground;
+    padding: 4px 10px;
+    margin: 5px 3px;
+    border: 1px solid @border;
+    border-radius: 6px;
 }
-#workspaces{
-	border: 1px solid @border;
-	border-radius: 6px;
-	margin: 4px 3px;
-	padding: 0 4px;
+
+#workspaces {
+    margin: 4px 3px;
+    padding: 0 4px;
+    border: 1px solid @border;
+    border-radius: 6px;
 }
-#workspaces button{
-	color:@foreground;
-	border:none;
-	border-radius:4px;
-	padding:0 6px;
-	margin:2px;
+
+#workspaces button {
+    color: @muted;
+    padding: 0 7px;
+    margin: 2px;
+    border: none;
+    border-radius: 4px;
 }
-#workspaces button.active{
-color:@foreground;
-background-color: @module-background;
+
+#workspaces button.active {
+    color: @foreground;
+    background: @accent;
 }
+
+#workspaces button:hover {
+    color: @foreground;
+    background: @module-background;
+}
+
+#clock {
+    color: @accent;
+}
+
+#battery {
+    color: #d4bfff;
+}
+
+#cpu {
+    color: #b994ff;
+}
+
+#memory {
+    color: #c9a7ff;
+}
+
+#tray {
+    color: @foreground;
+}
+
+#battery.warning {
+    color: #f0b35b;
+}
+
+#battery.critical {
+    color: #f26d85;
+}
+
