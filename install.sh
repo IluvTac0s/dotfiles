@@ -32,6 +32,9 @@ read -rp "Install zsh dotfiles? [y/N] " answer
 read -rp "Install bash dotfiles? [y/N] " answer
 [[ "$answer" =~ ^[Yy]$ ]] && packages+=(bash)
 
+read -rp "Install Kitty dotfiles? [y/N] " answer
+[[ "$answer" =~ ^[Yy]$ ]] && packages+=(kitty)
+
 read -rp "Install Hyprland dotfiles? [y/N] " answer
 [[ "$answer" =~ ^[Yy]$ ]] && packages+=(hypr)
 
