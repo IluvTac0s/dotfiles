@@ -47,6 +47,8 @@ sudo pacman -S --needed \
     kitty \
     hyprland \
     waybar \
+    blueman\
+    network-manager-applet\
     hyprpaper \
     hyprlauncher \
     btop \
