@@ -5,14 +5,30 @@ DOTFILES_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 cd "$DOTFILES_DIR"
 
 if ! command -v stow >/dev/null 2>&1; then
-    echo "Error: GNU Stow is not installed."
-    echo "Install it with your package manager, for example:"
-    echo "  sudo pacman -S stow"
+    printf '%s\n' \
+        "Error: GNU Stow is not installed." \
+        "Install it with:" \
+        "  sudo pacman -S stow"
     exit 1
 fi
 
 packages=()
-echo "Welcome to TacoLover's DotFiles"
+
+printf '%s\n' \
+    "Welcome to TacoLover's Dotfiles" \
+    "" \
+    "Requirements:" \
+    "  - bash or zsh" \
+    "  - Hyprland" \
+    "    - kitty" \
+    "    - hyprpaper" \
+    "  - Waybar" \
+    "  - GNU Stow" \
+    ""
+
+read -rp "Install zsh dotfiles? [y/N] " answer
+[[ "$answer" =~ ^[Yy]$ ]] && packages+=(zsh)
+
 read -rp "Install bash dotfiles? [y/N] " answer
 [[ "$answer" =~ ^[Yy]$ ]] && packages+=(bash)
 
@@ -23,13 +39,12 @@ read -rp "Install Waybar dotfiles? [y/N] " answer
 [[ "$answer" =~ ^[Yy]$ ]] && packages+=(waybar)
 
 if (( ${#packages[@]} == 0 )); then
-    echo "Nothing selected."
+    printf '%s\n' "Nothing selected."
     exit 0
 fi
 
-echo
-echo "Installing: ${packages[*]}"
+printf '\nInstalling: %s\n' "${packages[*]}"
+
 stow --target="$HOME" "${packages[@]}"
 
-echo "Dotfiles installed successfully."
-
+printf '%s\n' "Dotfiles installed successfully."
