@@ -129,7 +129,7 @@ Install the font if it is available from your configured repositories or AUR hel
 For example:
 
 ```bash
-yay -S ttf-departure-mono-nerd
+yay -S nerd-fonts
 ```
 
 Check whether the font is available:
