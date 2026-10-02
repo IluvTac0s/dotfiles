@@ -1,5 +1,5 @@
 # My Dotfiles
-
+![example of how it looks](how_it_looks.png)
 Personal Arch Linux dotfiles for a Hyprland desktop.
 
 The setup currently includes:
