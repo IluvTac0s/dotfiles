@@ -1,0 +1,21 @@
+#!/bin/sh
+
+file="$1"
+width="$2"
+height="$3"
+x="$4"
+y="$5"
+
+case "$(file --mime-type -Lb "$file")" in
+    image/*)
+        kitty +kitten icat \
+            --silent \
+            --stdin=no \
+            --transfer-mode=file \
+            --place "${width}x${height}@${x}x${y}" \
+            "$file" > /dev/tty
+        ;;
+    *)
+        file -Lb "$file"
+        ;;
+esac

@@ -10,7 +10,8 @@ set incsearch true
 # Editor and pager
 set editor $EDITOR
 set pager $PAGER
-
+set preview true
+set previewer ~/.config/lf/preview
 # Open files with the system default application
 cmd open-file ${{
     case "$f" in
