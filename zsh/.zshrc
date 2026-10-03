@@ -81,6 +81,8 @@ alias ll='ls -lah'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias hexedit='hexedit --color -l 16'
+
 alias lfh='lf --command "set hidden"'
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
