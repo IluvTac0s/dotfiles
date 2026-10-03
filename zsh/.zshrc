@@ -1,12 +1,4 @@
-
-# ~/.zshrc
-#
-
-#
-# ~/.zshrc
-#
-
-# Only configure interactive shells.
+#Only configure interactive shells.
 [[ -o interactive ]] || return
 
 # ─────────────────────────────────────────────────────────────
@@ -14,8 +6,8 @@
 # ─────────────────────────────────────────────────────────────
 
 HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/zsh/history"
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=1000
+SAVEHIST=1000
 
 mkdir -p -- "${HISTFILE:h}"
 
@@ -89,6 +81,7 @@ alias ll='ls -lah'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias lfh='lf --command "set hidden"'
 alias grep='grep --color=auto'
 alias diff='diff --color=auto'
 
@@ -101,6 +94,10 @@ alias v='nvim'
 alias vim='nvim'
 
 alias reload='source ~/.zshrc'
+
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -I'
 
 # Safer file operations.
 alias cp='cp -iv'

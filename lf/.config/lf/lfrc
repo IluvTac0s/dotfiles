@@ -1,0 +1,31 @@
+# Show hidden files by default
+set hidden true
+
+# Use icons if your terminal supports them
+set icons true
+
+# Enable incremental search
+set incsearch true
+
+# Editor and pager
+set editor $EDITOR
+set pager $PAGER
+
+# Open files with the system default application
+cmd open-file ${{
+    case "$f" in
+        *.pdf|*.png|*.jpg|*.jpeg|*.gif)
+            xdg-open "$f" >/dev/null 2>&1 &
+            ;;
+        *)
+            "$EDITOR" "$f"
+            ;;
+    esac
+}}
+
+# Custom shortcuts
+map e $$EDITOR "$f"
+map o :open-file
+map zh set hidden!
+map <delete> $rm -i "$fx"
+map a :push :mkdir<space>
