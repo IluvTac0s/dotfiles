@@ -5,6 +5,7 @@
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 hl.bind(mainMod .. "+ T",hl.dsp.exec_cmd(taskmgr))
+hl.bind(mainMod .. "+ SHIFT + T",hl.dsp.exec_cmd("grim -g '$(slurp)' ~/Pictures/screenshot-$(date +%F).png"))
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("firefox"))
