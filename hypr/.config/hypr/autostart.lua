@@ -9,7 +9,7 @@
 --
 hl.on("hyprland.start", function () 
 --   hl.exec_cmd(terminal)
-hl.exec_cmd("systemctl --user start xdg-desktop=portal-hyprland")
+hl.exec_cmd("systemctl --user start xdg-desktop-portal-hyprland")
   hl.exec_cmd("nm-applet & hyprpaper & waybar")
   hl.exec_cmd("blueman-applet")
 end)
