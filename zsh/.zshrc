@@ -97,10 +97,6 @@ alias vim='nvim'
 
 alias reload='source ~/.zshrc'
 
-alias cp='cp -iv'
-alias mv='mv -iv'
-alias rm='rm -I'
-
 # Safer file operations.
 alias cp='cp -iv'
 alias mv='mv -iv'
